@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+$bg-color: hsla(196, 100%, 94%, 0.514);
+$body-font: 'Open Sans', sans-serif;
+$header-font: 'Poppins', sans-serif;
+$welcome-btn-color: indigo;
+$medium: 720px;
+$medium-upper: 880px;
+$small: 500px;
+
+* {
+    box-sizing: border-box;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+html, body{
+    font-size: 18px;
+}
+
+h1 {
+    font-family: $header-font;
+}
+
+.container {
+    width: 100%;
+    background-image: url(../images/bg-hero-desktop.svg);
+    background-position: center;
+    background-color: $bg-color;
+    // height: 600px;
+    margin: auto;
+    @media only screen and (max-width: $medium) {
+        background-image: url(../images/bg-hero-mobile.svg);
+    }
+}
+
+@mixin center {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@mixin check($color){
+    border: 1px solid $color;
+}
+
+.welcome {
+    @include center;
+    padding: 1.5em;
+    .welcome-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; 
+        height: 6em;  
+        margin-top: 20px;
+        img {
+            max-width: 11em;
+            height: auto;
+            @media only screen and (max-width: $medium) {
+                width: 5em;
+                padding-top: 0.4em;
+            }
+        }
+        button {
+            font-family: $header-font;
+            font-size: 0.9rem;
+            background-color: white;
+            border: transparent;
+            padding: 0.5em 3em 0.5em 3em;
+            box-shadow: 0 8px 6px -9px black;
+            border-radius: 20px;
+            outline: transparent;
+            transform: scale(1);
+            cursor: pointer;
+            transition: transform ease-out 0.3s;
+            &:hover{
+                transform: scale(0.85);;
+            }
+            @media only screen and (max-width: $medium) {
+                font-size: 0.7rem;
+                height: 44px;
+            }
+        } 
+    }
+}
+
+
+
+.welcome-content {
+    display: flex;
+    align-items: center;
+    .welcome-text {
+        width: 50%;
+        @media only screen and (max-width: $medium) {
+            width: 85%;
+            text-align: center;
+            margin-top: 2em;
+            margin-bottom: 2em;
+        }
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5em;  
+            @media only screen and (min-width: $small + 1px) and (max-width: $medium) {
+                font-size: 1.6rem;
+            }
+            @media only screen and (max-width: $small) {
+                font-size: 1.2rem;
+            }
+        }
+        p {
+            font-size: 1rem;
+            font-family: $body-font;
+            margin-bottom: 1.5em;
+            padding-right: 1em;
+            @media only screen and (max-width: $medium) {
+                font-size: 0.95rem;
+            }
+        }
+        .get-started-free {
+            font-size: 1rem;
+            padding: 0.5em 1.5em 0.5em 1.5em;
+            background-color: $welcome-btn-color;
+            color: lavender;
+            opacity: 70%;
+            border-radius: 10px;
+            border: transparent;
+            font-family: $body-font;
+            margin-bottom: 1.5em;
+            outline: transparent;
+            cursor: pointer;
+            transition: border-radius ease-out 0.6s,opacity ease-in 1s;
+            &:hover{
+                border-radius: 22px;
+                opacity: 100%;
+            }
+            @media only screen and (max-width: $medium) {
+                font-size: 0.95rem;
+                height: 44px;
+            }
+        }  
+    }
+    @media only screen and (max-width: $medium) {
+        flex-direction: column;
+    }
+}
+
+
+.welcome-illustration {
+    width: 50%;
+    img {
+        width: 100%;
+    }
+    @media only screen and (max-width: $medium) {
+        width: 85%;
+    }
+}
+
+// ----------------------------------------------------
+// MID Section
+@mixin shadow {
+    -webkit-box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 9px 0px rgba(0,0,0,0.75);
+}
+
+.mid-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3em;
+}
+
+.step-1, .step-2, .step-3  {
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    // height: 350px;
+    @include shadow;
+    @include center;
+    width: 90%;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    @media only screen and (max-width: $medium) {
+        width: 80%;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}
+
+.step-2 {
+    @media only screen and (max-width: $medium) {
+        flex-direction: column;
+    }
+}
+
+.step-1-text, .step-2-text, .step-3-text {
+    padding: 2em;
+    padding-left: 4em;
+    width: 50%;
+    h2{
+        font-family: $header-font;
+        font-size: 1.5rem;
+        @media only screen and (max-width: $medium) {
+            margin-bottom: 1em;
+        }
+    }
+    
+    p {
+        font-family: $body-font;
+        @media only screen and (max-width: $medium) {
+            margin-bottom: 3em;
+        }
+    }
+    @media only screen and (max-width: $medium) {
+        width: 100%;
+        height: 100%;
+        padding: 0 2em 0 2em;
+    }
+}
+
+.step-1-img, .step-2-img, .step-3-img {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    img {
+        width: 80%;
+        // height: 300px;
+        @media only screen and (min-width: $small + 1px) and (max-width: $medium) {
+            width: auto;
+            height: 250px;
+        }
+        @media only screen and (max-width: #{$small}) {
+            width: auto;
+            height: 200px;
+        }
+        @media only screen and (max-width: 321px) {
+            width: auto;
+            height: 160px;
+        }
+    } 
+    @media only screen and (max-width: #{$small}) {
+        width: 100%;
+    }
+    
+}
+
+// ---------------------------------------------------------
+// Bottom section  ========================
+// =========================================
+.bottom-container {
+    margin-top: 2em;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 7em;
+    padding-bottom: 10px;
+    background-color: rgb(35, 31, 53);
+    color: whitesmoke;
+    @media only screen and (max-width: $medium-upper + 300px) {
+        padding: 2em;
+        padding-top: 6em;
+    }
+    @media only screen and (max-width: $medium-upper) {
+        padding: 1em;
+        padding-top: 2em;
+        padding-left: 0.6em;
+        flex-direction: column;
+        font-size: 2rem;
+    }
+}
+
+.contact-info {
+    font-family: $body-font;
+    padding: 2em;
+    width: 30%;
+    @media only screen and (max-width: $medium-upper) {
+        width: 100%;
+
+    }
+}
+
+.bottom-logo {
+    width: 200px;
+    margin-bottom: 2.3em;
+}
+
+.contact {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 1.4em;
+    i {
+        margin-right: 1.5em;
+    }
+}
+
+.link1-container, .link2-container{
+    // text-align: center;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    padding-top: 7.4em;
+    align-items: center;
+    font-family: $body-font;
+    font-size: 0.8rem;
+    line-height: 3em;
+    // @include check(orange);
+    li{
+        list-style-type: none;
+        a {
+            color: whitesmoke;
+            text-decoration: none;
+        }
+    }
+    @media only screen and (max-width: $medium-upper) {
+        align-items: flex-start;
+        padding-left: 3em;
+        padding-top: 0;
+    }
+}
+
+.logos {
+    display: flex;
+    justify-content: flex-end;
+    color: black;
+    padding-top: 7.4em;
+    padding-right: 2em;
+    a{
+        color: rgb(212, 212, 212);
+        margin-right: 3em;
+    }
+    @media only screen and (max-width: $medium-upper) {
+        justify-content: center;
+        padding: 2em 0 0 2.5em;
+    }
+
+}
+
+.mid-con {
+    position: relative;
+    top: 130px;
+    font-family: $body-font;
+    background-color: white;
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    border-radius: 10px;
+    margin: 0 auto;
+    @include shadow;
+    p {
+        font-size: 1.4rem;
+        margin-bottom: 1.2em;
+        @media only screen and (max-width: 600px) {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+    button {
+        font-size: 1.3rem;
+        padding: 0.5em 1.5em 0.5em 1.5em;
+        background-color: $welcome-btn-color;
+        color: lavender;
+        opacity: 70%;
+        border-radius: 10px;
+        border: transparent;
+        font-family: $body-font;
+        outline: transparent;
+        cursor: pointer;
+        transition: border-radius ease-out 0.6s,opacity ease-in 1s;
+        &:hover{
+            border-radius: 22px;
+            opacity: 100%;
+        }
+        @media only screen and (max-width: $medium) {
+            font-size: 0.95rem;
+            height: 42px;
+        }
+    }
+    @media only screen and (max-width: 600px) {
+        width: 19em;
+        padding: 30px;
+    }
+    
+}
+
+footer {
+    position: relative;
+    padding-bottom: 20px;
+    padding-right: 70px;
+    font-size: 3pt;
+    background-color: rgb(35, 31, 53);
+    color: white;
+    font-family: $body-font;
+    text-align: end;
+    p {
+        font-size: 0.8rem;
+        
+    }
+    @media only screen and (max-width: $medium-upper) {
+        text-align: center;
+        padding-right: 0;;
+    }
+}
